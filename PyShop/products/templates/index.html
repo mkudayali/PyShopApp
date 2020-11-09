@@ -3,6 +3,7 @@
 {% block content %}
 
 <h1>Products</h1>
+
 <div class = "row">
     {% for product in products %}
     <div class="col">
@@ -10,7 +11,7 @@
         <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner">
         <div class="carousel-item active">
-        <img src="{{ product.image_url }}" class="card-img-top" alt="...">
+        <img src="{{ product.product_images }}" class="card-img-top" alt="...">
         </div>
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -25,7 +26,7 @@
           <div class="card-body">
             <h5 class="card-title">{{ product.name }}</h5>
               <h5 class="card-title">{{ product.price }}</h5>
-            <p class="card-text">Sample Content as description and make up the bulk of the card's content.</p>
+            <p class="card-text">{{ product.description }}</p>
             <a href=" detail/{{ product.id }}" class="btn btn-primary">View</a>
           </div>
         </div>
